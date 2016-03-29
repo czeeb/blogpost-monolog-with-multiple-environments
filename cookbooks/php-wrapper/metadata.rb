@@ -1,0 +1,11 @@
+name             'php-wrapper'
+maintainer       'Chris Zeeb'
+maintainer_email 'chris.zeeb@gmail.com'
+license          'All rights reserved'
+description      'Installs/Configures php-wrapper'
+long_description 'Installs/Configures php-wrapper'
+version          '0.1.0'
+
+depends 'php', '~> 1.8.0'
+depends 'yum-epel', '~> 0.6.6'
+depends 'yum-remi-chef', '~> 1.0.4'

@@ -1,0 +1,8 @@
+{
+    "require": {
+        "theorchard/monolog-cascade": "^0.4.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    }
+}

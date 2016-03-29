@@ -1,0 +1,11 @@
+name             'role-web'
+maintainer       'Chris Zeeb'
+maintainer_email 'chris.zeeb@gmail.com'
+license          'All rights reserved'
+description      'Installs/Configures role-web'
+long_description 'Installs/Configures role-web'
+version          '0.1.0'
+
+depends 'composer', '~> 2.2.1'
+depends 'nginx-wrapper', '~> 0.1.0'
+depends 'php-wrapper', '~> 0.1.0'

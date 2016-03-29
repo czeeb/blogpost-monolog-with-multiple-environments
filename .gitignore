@@ -1,0 +1,6 @@
+.vagrant
+.idea
+/app/vendor
+/app/conf/*.yml
+Berksfile.lock
+composer.lock

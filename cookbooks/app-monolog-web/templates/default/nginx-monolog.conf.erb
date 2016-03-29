@@ -1,0 +1,30 @@
+server {
+  listen   80;
+  server_name  localhost;
+
+  access_log  /var/log/nginx/localhost.access.log;
+  root        /vagrant/app/www;
+  index index.php index.html;
+
+  location / {
+    try_files $uri $uri/ @proxy;
+  }
+
+  location @proxy {
+    # https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/
+    try_files $uri $uri/index.php =404;
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_index index.php;
+    include /etc/nginx/fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+  }
+
+  location ~ \.php$ {
+    # https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/
+    try_files $uri $uri/index.php =404;
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_index index.php;
+    include /etc/nginx/fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+  }
+}
